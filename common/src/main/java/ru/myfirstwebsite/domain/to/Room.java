@@ -3,20 +3,21 @@ package ru.myfirstwebsite.domain.to;
 import java.util.Objects;
 
 public class Room {
-    private int roomId;
+    private Integer roomId;
     private String roomClass;
-    private int roomPrice;
-    private int roomNum;
-    private int roomSize;
+    private Integer roomPricePerDay;
+    private Integer roomNum;
+    private Integer roomSize;
+    private String roomStatus;
 
     public Room() {
     }
 
-    public int getRoomId() {
+    public Integer getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(int roomId) {
+    public void setRoomId(Integer roomId) {
         this.roomId = roomId;
     }
 
@@ -28,28 +29,36 @@ public class Room {
         this.roomClass = roomClass;
     }
 
-    public int getRoomPrice() {
-        return roomPrice;
+    public Integer getRoomPricePerDay() {
+        return roomPricePerDay;
     }
 
-    public void setRoomPrice(int roomPrice) {
-        this.roomPrice = roomPrice;
+    public void setRoomPricePerDay(Integer roomPricePerDay) {
+        this.roomPricePerDay = roomPricePerDay;
     }
 
-    public int getRoomNum() {
+    public Integer getRoomNum() {
         return roomNum;
     }
 
-    public void setRoomNum(int roomNum) {
+    public void setRoomNum(Integer roomNum) {
         this.roomNum = roomNum;
     }
 
-    public int getRoomSize() {
+    public Integer getRoomSize() {
         return roomSize;
     }
 
-    public void setRoomSize(int roomSize) {
+    public void setRoomSize(Integer roomSize) {
         this.roomSize = roomSize;
+    }
+
+    public String getRoomStatus() {
+        return roomStatus;
+    }
+
+    public void setRoomStatus(String roomStatus) {
+        this.roomStatus = roomStatus;
     }
 
     @Override
@@ -57,16 +66,17 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return roomId == room.roomId &&
-                roomPrice == room.roomPrice &&
-                roomNum == room.roomNum &&
-                roomSize == room.roomSize &&
-                Objects.equals(roomClass, room.roomClass);
+        return Objects.equals(getRoomId(), room.getRoomId()) &&
+                Objects.equals(getRoomClass(), room.getRoomClass()) &&
+                Objects.equals(getRoomPricePerDay(), room.getRoomPricePerDay()) &&
+                Objects.equals(getRoomNum(), room.getRoomNum()) &&
+                Objects.equals(getRoomSize(), room.getRoomSize()) &&
+                Objects.equals(getRoomStatus(), room.getRoomStatus());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roomId, roomClass, roomPrice, roomNum, roomSize);
+        return Objects.hash(getRoomId(), getRoomClass(), getRoomPricePerDay(), getRoomNum(), getRoomSize(), getRoomStatus());
     }
 
     @Override
@@ -74,9 +84,10 @@ public class Room {
         return "Room{" +
                 "roomId=" + roomId +
                 ", roomClass='" + roomClass + '\'' +
-                ", roomPrice=" + roomPrice +
+                ", roomPricePerDay=" + roomPricePerDay +
                 ", roomNum=" + roomNum +
                 ", roomSize=" + roomSize +
+                ", roomStatus='" + roomStatus + '\'' +
                 '}';
     }
 }

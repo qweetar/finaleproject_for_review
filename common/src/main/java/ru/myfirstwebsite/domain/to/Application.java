@@ -4,21 +4,21 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Application {
-    private int applicationId;
+    private Integer applicationId;
     private String roomClass;
-    private int roomSize;
+    private Integer roomSize;
     private Date dateFrom;
     private Date dateTo;
-    private int userId;
+    private Integer userId;
 
     public Application() {
     }
 
-    public int getApplicationId() {
+    public Integer getApplicationId() {
         return applicationId;
     }
 
-    public void setApplicationId(int applicationId) {
+    public void setApplicationId(Integer applicationId) {
         this.applicationId = applicationId;
     }
 
@@ -30,11 +30,11 @@ public class Application {
         this.roomClass = roomClass;
     }
 
-    public int getRoomSize() {
+    public Integer getRoomSize() {
         return roomSize;
     }
 
-    public void setRoomSize(int roomSize) {
+    public void setRoomSize(Integer roomSize) {
         this.roomSize = roomSize;
     }
 
@@ -54,30 +54,31 @@ public class Application {
         this.dateTo = dateTo;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Application that = (Application) o;
-        return applicationId == that.applicationId &&
-                userId == that.userId &&
-                Objects.equals(roomClass, that.roomClass) &&
-                Objects.equals(roomSize, that.roomSize) &&
-                Objects.equals(dateFrom, that.dateFrom) &&
-                Objects.equals(dateTo, that.dateTo);
+        return Objects.equals(getApplicationId(), that.getApplicationId()) &&
+                Objects.equals(getRoomClass(), that.getRoomClass()) &&
+                Objects.equals(getRoomSize(), that.getRoomSize()) &&
+                Objects.equals(getDateFrom(), that.getDateFrom()) &&
+                Objects.equals(getDateTo(), that.getDateTo()) &&
+                Objects.equals(getUserId(), that.getUserId()) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(applicationId, roomClass, roomSize, dateFrom, dateTo, userId);
+        return Objects.hash(getApplicationId(), getRoomClass(), getRoomSize(), getDateFrom(), getDateTo(), getUserId());
     }
 
     @Override
@@ -85,7 +86,7 @@ public class Application {
         return "Application{" +
                 "applicationId=" + applicationId +
                 ", roomClass='" + roomClass + '\'' +
-                ", roomSize='" + roomSize + '\'' +
+                ", roomSize=" + roomSize +
                 ", dateFrom=" + dateFrom +
                 ", dateTo=" + dateTo +
                 ", userId=" + userId +

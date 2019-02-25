@@ -1,6 +1,6 @@
 
-esquid:S2095/"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¤Œ¨ó†-
 esquid:S2095Y"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8µÀ’ó†-
-esquid:S2095D"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8Õ“üò†-
 lsquid:UselessImportCheck"ARemove this unused import 'ru.myfirstwebsite.dao.ApplicationDao'.(‘©–Š8Íüóò†-
 msquid:S1192O"JDefine a constant instead of duplicating this literal "Exception" 3 times.(¢¼§¥üÿÿÿÿ8ÿ¸œó†-
+esquid:S2095/"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¤Œ¨ó†-
+esquid:S2095D"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8Õ“üò†-

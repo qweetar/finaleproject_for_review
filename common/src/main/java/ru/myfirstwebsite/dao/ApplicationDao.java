@@ -8,5 +8,5 @@ import java.util.List;
 public interface ApplicationDao extends GenericDao <Application, Integer> {
 
 
-    List<Application> getApplication (Integer userId) throws DaoException;
+    List<Application> getUserApplication (Integer userId) throws DaoException;
 }

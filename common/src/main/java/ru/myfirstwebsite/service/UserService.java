@@ -1,6 +1,6 @@
 package ru.myfirstwebsite.service;
 
-import com.google.protobuf.ServiceException;
+import ru.myfirstwebsite.service.ServiceException;
 
 import ru.myfirstwebsite.domain.to.User;
 import ru.myfirstwebsite.exceptions.NoSuchEntityException;

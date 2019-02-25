@@ -107,7 +107,7 @@ public class SQLReservationDao implements ReservationDao {
     }
 
     @Override
-    public int create(Reservation entity) throws DaoException {
+    public Integer create(Reservation entity) throws DaoException {
         return 0;
     }
 

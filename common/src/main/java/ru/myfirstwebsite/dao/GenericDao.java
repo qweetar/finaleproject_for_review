@@ -43,7 +43,7 @@ public interface GenericDao<T, K> {
      * @return unique number created record
      * @throws DaoException
      */
-	int create(T entity) throws DaoException;
+	Integer create(T entity) throws DaoException;
 
     /**
      * Method update one of record in database with actually information
@@ -52,5 +52,5 @@ public interface GenericDao<T, K> {
      * @return unique number updated record
      * @throws DaoException
      */
-	K update(T entity) throws DaoException;
+	Integer update(T entity) throws DaoException;
 }

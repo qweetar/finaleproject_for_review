@@ -41,7 +41,8 @@ public final class ConnectionPool implements ConnectionPoolInterface {
 		
 		try {
 			poolSize = Integer.valueOf(manager.getProperty(DatabaseConfigManager.DATABASE_POOL_SIZE));
-		} catch (NumberFormatException e) {
+			init();
+		} catch (NumberFormatException | ConnectionPoolException e) {
 			LOGGER_ROOT.error("Size of pull is bad!", e);
 			poolSize = DEFAULT_POOL_SIZE;
 		}

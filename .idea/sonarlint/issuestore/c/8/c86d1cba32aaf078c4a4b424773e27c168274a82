@@ -1,18 +1,19 @@
 
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ê«¸Ë8åÈ¹¢†-
+squid:S106"9Replace this use of System.out or System.err by a logger.(ßò¢Õ8 Ğ³Ò‰-
+osquid:UselessImportCheck	"?Remove this unused import 'ru.myfirstwebsite.domain.enums.Sex'.(ñ‰Û·úÿÿÿÿ8óöò‡ˆ-
+Fsquid:S1148""#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¬¨±Ò‰-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(‡–°Ù8»ÒìË†-
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ê«¸Ë8 Ğ³Ò‰-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(á×ûÑ8•¬˜È†-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(©¶ó²8’ÍÑç…-
-Fsquid:S1148 "#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8•¬˜È†-
+squid:S106"9Replace this use of System.out or System.err by a logger.(‡–°Ù8 Ğ³Ò‰-
 [
-squid:S106"9Replace this use of System.out or System.err by a logger.(åæ´óÿÿÿÿÿ8‘Í€õ†-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(òëúØıÿÿÿÿ8çøÓç…-
+squid:S106"9Replace this use of System.out or System.err by a logger.(òëúØıÿÿÿÿ8 Ğ³Ò‰-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ßò¢Õ8„ÅÈ†-
+squid:S106"9Replace this use of System.out or System.err by a logger.(©¶ó²8 Ğ³Ò‰-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ñõí…8ÆÑ÷Ë†-
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ñõí…8 Ğ³Ò‰-
+msquid:UselessImportCheck
+"=Remove this unused import 'ru.myfirstwebsite.domain.to.Room'.(Áù´¾ÿÿÿÿÿ8ï„¥‡ˆ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(á×ûÑ8¬¨±Ò‰-

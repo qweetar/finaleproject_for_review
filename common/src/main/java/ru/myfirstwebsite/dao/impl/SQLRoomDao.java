@@ -11,23 +11,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SQLRoomDao implements RoomDao {
 
     private static final String ROOM_ID = "idroom";
     private static final String ROOM_CLASS = "class";
-    private static final String ROOM_PRICE = "price";
+    private static final String ROOM_PRICE_PER_DAY = "priceday";
     private static final String ROOM_NUM = "room#";
     private static final String ROOM_SIZE = "roomsize";
+    private static final String ROOM_STATUS = "roomstatus";
 
     private static final ConnectionPool POOL = ConnectionPool.getInstance();
 
     private static final String SELECT_BY_ID = "SELECT * FROM room WHERE idroom = ?";
-    private static final String CREATE_ROOM = "INSERT INTO room (idroom, class, price, room#, roomsize)" +
-            "VALUES (?, ?, ?, ?, ?)";
+    private static final String CREATE_ROOM = "INSERT INTO room (idroom, class, priceday, room#, roomsize, roomstatus)" +
+            "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_BY_ROOM_NUM = "SELECT * FROM room WHERE room# = ?";
     private static final String DELETE_ROOM = "DELETE FROM room WHERE idroom = ?";
+    private static final String SELECT_ALL_ROOMS = "SELECT * FROM room";
 
     public SQLRoomDao() {
     }
@@ -60,7 +63,25 @@ public class SQLRoomDao implements RoomDao {
 
     @Override
     public List<Room> findAll() throws DaoException {
-        return null;
+        List<Room> roomList = new ArrayList<>();
+        try (Connection connect = POOL.getConnection();
+             PreparedStatement statement = connect.prepareStatement(SELECT_ALL_ROOMS)) {
+            ResultSet set = statement.executeQuery();
+
+            while (set.next()) {
+                Room room = new Room();
+                room.setRoomId(set.getInt(ROOM_ID));
+                room.setRoomNum(set.getInt(ROOM_NUM));
+                room.setRoomSize(set.getInt(ROOM_SIZE));
+                room.setRoomClass(set.getString(ROOM_CLASS));
+                room.setRoomPricePerDay(set.getInt(ROOM_PRICE_PER_DAY));
+                room.setRoomStatus(set.getString(ROOM_STATUS));
+                roomList.add(room);
+                }
+        } catch (SQLException | ConnectionPoolException e) {
+            throw new DaoException("Exception", e);
+        }
+        return roomList;
     }
 
     @Override
@@ -74,9 +95,10 @@ public class SQLRoomDao implements RoomDao {
                 Room room = new Room();
                 room.setRoomId(set.getInt(ROOM_ID));
                 room.setRoomClass(set.getString(ROOM_CLASS));
-                room.setRoomPrice(set.getInt(ROOM_PRICE));
+                room.setRoomPricePerDay(set.getInt(ROOM_PRICE_PER_DAY));
                 room.setRoomNum(set.getInt(ROOM_NUM));
                 room.setRoomSize(set.getInt(ROOM_SIZE));
+                room.setRoomStatus(set.getString(ROOM_STATUS));
                 return room;
             } else {
                 return null;
@@ -98,8 +120,8 @@ public class SQLRoomDao implements RoomDao {
         }
     }
 
-    @Override // Ask about this realisation of this method?????
-    public int create(Room room) throws DaoException {
+    @Override
+    public Integer create(Room room) throws DaoException {
 //        try(Connection connect = POOL.getConnection();
 //            PreparedStatement statement = connect.prepareStatement(CREATE_ROOM)) {
 //            statement.setInt(1, room.getRoomId());

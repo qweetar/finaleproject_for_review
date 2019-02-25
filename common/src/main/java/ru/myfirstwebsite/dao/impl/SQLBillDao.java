@@ -1,6 +1,5 @@
 package ru.myfirstwebsite.dao.impl;
 
-import ru.myfirstwebsite.dao.ApplicationDao;
 import ru.myfirstwebsite.dao.BillDao;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPool;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPoolException;
@@ -16,10 +15,10 @@ import java.util.List;
 
 public class SQLBillDao implements BillDao {
 
-    private static final String RESERVATION_ID = "reservationId";
+    private static final String APPLICATION_ID = "applicationId";
     private static final String PRICE = "price";
     private static final String BILL_ID = "idbill";
-    private static final String ROOM_ID = "roomid";
+    private static final String USER_ID = "userid";
 
     private static final String SELECT_ALL_BILLS = "SELECT * FROM bill";
     private static final String SELECT_BY_ID = "SELECT * FROM bill WHERE idbill = ?";
@@ -49,9 +48,9 @@ public class SQLBillDao implements BillDao {
             while (set.next()) {
                 Bill bill = new Bill();
                 bill.setBillId(set.getInt(BILL_ID));
-                bill.setBillId(set.getInt(RESERVATION_ID));
-                bill.setBillId(set.getInt(PRICE));
-                bill.setBillId(set.getInt(ROOM_ID));
+                bill.setApplicationId(set.getInt(APPLICATION_ID));
+                bill.setPrice(set.getInt(PRICE));
+                bill.setUserId(set.getInt(USER_ID));
                 list.add(bill);
             }
         } catch (SQLException | ConnectionPoolException e) {
@@ -70,9 +69,9 @@ public class SQLBillDao implements BillDao {
             while (set.next()) {
                 Bill bill = new Bill();
                 bill.setBillId(set.getInt(BILL_ID));
-                bill.setBillId(set.getInt(RESERVATION_ID));
-                bill.setBillId(set.getInt(PRICE));
-                bill.setBillId(set.getInt(ROOM_ID));
+                bill.setApplicationId(set.getInt(APPLICATION_ID));
+                bill.setPrice(set.getInt(PRICE));
+                bill.setUserId(set.getInt(USER_ID));
                 list.add(bill);
             }
         } catch (SQLException | ConnectionPoolException e) {
@@ -91,9 +90,9 @@ public class SQLBillDao implements BillDao {
             if (set.next()) {
                 Bill bill = new Bill();
                 bill.setBillId(set.getInt(BILL_ID));
-                bill.setBillId(set.getInt(RESERVATION_ID));
-                bill.setBillId(set.getInt(PRICE));
-                bill.setBillId(set.getInt(ROOM_ID));
+                bill.setApplicationId(set.getInt(APPLICATION_ID));
+                bill.setPrice(set.getInt(PRICE));
+                bill.setUserId(set.getInt(USER_ID));
                 return bill;
             } else {
                 return null;
@@ -116,7 +115,7 @@ public class SQLBillDao implements BillDao {
     }
 
     @Override
-    public int create(Bill entity) throws DaoException {
+    public Integer create(Bill entity) throws DaoException {
         return 0;
     }
 

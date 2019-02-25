@@ -1,6 +1,8 @@
 
-esquid:S2095J"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8ÓŒşğ†-
-esquid:S2095a"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8Èä®ñ†-
-msquid:S1192W"JDefine a constant instead of duplicating this literal "Exception" 3 times.(¢¼§¥üÿÿÿÿ8Ì¸ñ†-
-hsquid:UselessImportCheck"=Remove this unused import 'ru.myfirstwebsite.domain.to.User'.(ùõ§¬8îœûô†-
-esquid:S20953"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¦­ğ†-
+esquid:S2095h"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8Èä®ñ†-
+fsquid:S2095˜"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(·º×Í8¡™İï-
+osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(®ÿò·úÿÿÿÿ8²Ãñ-
+msquid:S1192^"JDefine a constant instead of duplicating this literal "Exception" 5 times.(¢¼§¥üÿÿÿÿ8Ì¸ñ†-
+esquid:S2095:"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¦­ğ†-
+esquid:S2095Q"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8ÓŒşğ†-
+jsquid:CommentedOutCodeLine”"<This block of commented-out lines of code should be removed.(¦³î´8©¢ò-

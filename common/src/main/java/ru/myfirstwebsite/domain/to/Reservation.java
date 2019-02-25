@@ -5,27 +5,27 @@ import java.util.Objects;
 
 public class Reservation {
 
-    private int reservationId;
-    private int roomId;
+    private Integer reservationId;
+    private Integer roomId;
     private Date dateFrom;
     private Date dateTo;
 
     public Reservation() {
     }
 
-    public int getReservationId() {
+    public Integer getReservationId() {
         return reservationId;
     }
 
-    public void setReservationId(int reservationId) {
+    public void setReservationId(Integer reservationId) {
         this.reservationId = reservationId;
     }
 
-    public int getRoomId() {
+    public Integer getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(int roomId) {
+    public void setRoomId(Integer roomId) {
         this.roomId = roomId;
     }
 

@@ -1,7 +1,9 @@
 
-¤squid:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö¨Šúÿÿÿÿ8ûªÈ†-
-esquid:S2095G"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8ò³çÇ†-
-esquid:S2095o"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¢ÿÉô†-
-Isquid:S1168?"+Return an empty collection instead of null.(¥¹ï8“’†-
-msquid:S11929"JDefine a constant instead of duplicating this literal "Exception" 4 times.(¢¼§¥üÿÿÿÿ8¢ÿÉô†-
-esquid:S20955"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8²•ÆË†-
+esquid:S20958"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8ò³çÇ†-
+¤squid:S1186#"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö¨Šúÿÿÿÿ8ûªÈ†-
+esquid:S2095\"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8¤¤ëß-
+osquid:CommentedOutCodeLineˆ"<This block of commented-out lines of code should be removed.(¹©£Âûÿÿÿÿ8¤¤ëß-
+msquid:S1192<"JDefine a constant instead of duplicating this literal "Exception" 4 times.(¢¼§¥üÿÿÿÿ8¢ÿÉô†-
+esquid:S2095E"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8çßÛß-
+Lsquid:S1068"/Remove this unused "CREATE_ROOM" private field.(—óÎ88½ÇìË‰-
+hsquid:CommentedOutCodeLine}"<This block of commented-out lines of code should be removed.(åø¯J8¤¤ëß-

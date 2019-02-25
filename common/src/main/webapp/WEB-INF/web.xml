@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+
+    <listener>
+        <listener-class>
+            ru.myfirstwebsite.listener.ConnectPoolListener
+        </listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>ru.myfirstwebsite.controller.FrontController</servlet-class>
+    </servlet>
+	
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/FrontController</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Filters -->
+    <filter>
+        <display-name>CharsetFilter</display-name>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>ru.myfirstwebsite.filter.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>characterEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/FrontController</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>User</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/user.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>result</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/result.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>result</servlet-name>
+        <url-pattern>/result</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>Registration</servlet-name>
+    <jsp-file>/WEB-INF/jsp/user/registration.jsp</jsp-file>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Error</servlet-name>
+        <jsp-file>/WEB-INF/jsp/util/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Error</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>view_room</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/view_room.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>view_room</servlet-name>
+        <url-pattern>/view_room</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>application</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/application.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>application</servlet-name>
+        <url-pattern>/application</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>application_delete</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/application_delete.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>application_delete</servlet-name>
+        <url-pattern>/application_delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>view_application</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/view_application.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>view_application</servlet-name>
+        <url-pattern>/view_application</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>view_user</servlet-name>
+        <jsp-file>/WEB-INF/jsp/user/viewUser.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>view_user</servlet-name>
+        <url-pattern>/view_user</url-pattern>
+    </servlet-mapping>
+
+	
+</web-app>	

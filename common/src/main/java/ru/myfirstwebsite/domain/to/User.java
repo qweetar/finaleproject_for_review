@@ -1,34 +1,40 @@
 package ru.myfirstwebsite.domain.to;
 
-import ru.myfirstwebsite.domain.enums.Sex;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private Long userId;
+    private static final Long serialVersionUID = 1L;
+    private Integer userId;
     private String userName;
     private String surname;
     private String login;
     private String password;
-    private Sex sex;
+    //private Sex sex;
+
+    public User(Integer userId, String userName, String surname) {
+        this.userId = userId;
+        this.userName = userName;
+        this.surname = surname;
+    }
+
     private String mobilePhone;
     private String email;
-    private boolean blocked;
+    private Boolean blocked;
     private String role;
 
     public User() {    }
 
-    public static long getSerialVersionUID() {
+
+    public static Long getSerialVersionUID() {
         return serialVersionUID;
     }
 
-    public Long getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -64,13 +70,13 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Sex getSex() {
-        return sex;
-    }
+//    public Sex getSex() {
+//        return sex;
+//    }
 
-    public void setSex(Sex sex) {
-        this.sex = sex;
-    }
+//    public void setSex(Sex sex) {
+//        this.sex = sex;
+//    }
 
     public String getMobilePhone() {
         return mobilePhone;
@@ -88,7 +94,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public boolean isBlocked() {
+    public Boolean isBlocked() {
         return blocked;
     }
 

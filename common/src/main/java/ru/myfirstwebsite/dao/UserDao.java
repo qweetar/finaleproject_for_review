@@ -4,7 +4,7 @@ import ru.myfirstwebsite.domain.to.User;
 import ru.myfirstwebsite.exceptions.DaoException;
 import ru.myfirstwebsite.exceptions.NoSuchEntityException;
 
-/* Interface for User table in database with concrete parameters.
+/** Interface for User table in database with concrete parameters.
         * Provides specific method with {@link User} objects
         */
 

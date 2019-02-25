@@ -6,7 +6,9 @@ import ru.myfirstwebsite.dao.UserDao;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPool;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPoolException;
 import ru.myfirstwebsite.dao.factory.DaoFactory;
+import ru.myfirstwebsite.domain.enums.Sex;
 import ru.myfirstwebsite.domain.to.Room;
+import ru.myfirstwebsite.domain.to.User;
 import ru.myfirstwebsite.exceptions.DaoException;
 import ru.myfirstwebsite.exceptions.NoSuchEntityException;
 
@@ -27,7 +29,7 @@ public class Test {
             System.out.println("1 - " + roomDao.findById(2));
             System.out.println("2 - " + applicationDao.findAll());
 
-            System.out.println(roomDao.create(new Room())); // Ask about this situation???
+            //System.out.println(userDao.create(new User())); // Ask about this situation???
         } catch (DaoException e) {
             e.printStackTrace();
         }

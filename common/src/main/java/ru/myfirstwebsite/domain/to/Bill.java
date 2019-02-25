@@ -3,44 +3,44 @@ package ru.myfirstwebsite.domain.to;
 import java.util.Objects;
 
 public class Bill {
-    private int billId;
-    private int price;
-    private int reservationId;
-    private int roomId;
+    private Integer billId;
+    private Integer price;
+    private Integer applicationId;
+    private Integer userId;
 
     public Bill() {
     }
 
-    public int getBillId() {
+    public Integer getBillId() {
         return billId;
     }
 
-    public void setBillId(int billId) {
+    public void setBillId(Integer billId) {
         this.billId = billId;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public int getReservationId() {
-        return reservationId;
+    public Integer getApplicationId() {
+        return applicationId;
     }
 
-    public void setReservationId(int reservationId) {
-        this.reservationId = reservationId;
+    public void setApplicationId(Integer applicationId) {
+        this.applicationId = applicationId;
     }
 
-    public int getRoomId() {
-        return roomId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -48,15 +48,15 @@ public class Bill {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bill bill = (Bill) o;
-        return getBillId() == bill.getBillId() &&
-                getPrice() == bill.getPrice() &&
-                getReservationId() == bill.getReservationId() &&
-                getRoomId() == bill.getRoomId();
+        return Objects.equals(getBillId(), bill.getBillId()) &&
+                Objects.equals(getPrice(), bill.getPrice()) &&
+                Objects.equals(getApplicationId(), bill.getApplicationId()) &&
+                Objects.equals(getUserId(), bill.getUserId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBillId(), getPrice(), getReservationId(), getRoomId());
+        return Objects.hash(getBillId(), getPrice(), getApplicationId(), getUserId());
     }
 
     @Override
@@ -64,8 +64,8 @@ public class Bill {
         return "Bill{" +
                 "billId=" + billId +
                 ", price=" + price +
-                ", reservationId=" + reservationId +
-                ", roomId=" + roomId +
+                ", applicationId=" + applicationId +
+                ", userId=" + userId +
                 '}';
     }
 }

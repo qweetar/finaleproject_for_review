@@ -4,7 +4,6 @@ import ru.myfirstwebsite.dao.ApplicationDao;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPool;
 import ru.myfirstwebsite.dao.connection_pool.ConnectionPoolException;
 import ru.myfirstwebsite.domain.to.Application;
-import ru.myfirstwebsite.domain.to.User;
 import ru.myfirstwebsite.exceptions.DaoException;
 
 import java.sql.Connection;
@@ -22,11 +21,19 @@ public class SQLApplicationDao implements ApplicationDao {
     private static final String  DATE_FROM = "datefrom";
     private static final String  DATE_TO = "dateto";
     private static final String  USER_ID = "iduser";
+    private static final String LAST_ID = "lastId";
+
 
     private static final String SELECT_APPLICATION_USER = "SELECT * FROM application WHERE iduser = ?";
     private static final String SELECT_ALL_APPLICATIONS = "SELECT * FROM application";
     private static final String SELECT_BY_ID = "SELECT * FROM application WHERE idapplication = ?";
     private static final String DELETE_APPLICATION = "DELETE FROM application WHERE idapplication = ?";
+    private static final String CREATE_APPLICATION = "INSERT INTO application(roomsize, class, datefrom, dateto, iduser)" +
+            " VALUES ( ?, ?, ?, ?, ?)";
+    private static final String LAST_INSERT_ID = "SELECT last_insert_id() as lastId";
+    private static final String UPDATE_APPLICATION = "UPDATE application SET roomsize = ?," +
+            "class = ?, datefrom = ?, dateto = ? " +
+            "WHERE idapplication = ?";
 
 
 
@@ -43,7 +50,7 @@ public class SQLApplicationDao implements ApplicationDao {
     }
 
     @Override
-    public List<Application> getApplication(Integer userId) throws DaoException {
+    public List<Application> getUserApplication(Integer userId) throws DaoException {
         List<Application> list = new ArrayList<>();
         try (Connection connect = POOL.getConnection();
              PreparedStatement statement = connect.prepareStatement(SELECT_APPLICATION_USER)) {
@@ -126,12 +133,45 @@ public class SQLApplicationDao implements ApplicationDao {
     }
 
     @Override
-    public int create(Application entity) throws DaoException {
-        return 0;
+    public Integer create(Application application) throws DaoException {
+        try(Connection connect = POOL.getConnection();
+            PreparedStatement statement = connect.prepareStatement(CREATE_APPLICATION);
+            PreparedStatement statementThird = connect.prepareStatement(LAST_INSERT_ID)) {
+            connect.setAutoCommit(false);
+
+            //statement.setInt(1, application.getApplicationId());
+            statement.setInt(1, application.getRoomSize());
+            statement.setString(2, application.getRoomClass());
+            statement.setDate(3, (java.sql.Date) application.getDateFrom());
+            statement.setDate(4, (java.sql.Date) application.getDateTo());
+            statement.setInt(5, application.getUserId());
+//            statement.setInt(6, application.getRoomId());
+            statement.executeUpdate();
+            connect.commit();
+
+            ResultSet set = statementThird.executeQuery();
+            set.next();
+            return set.getInt(LAST_ID);
+        } catch (SQLException | ConnectionPoolException e) {
+            throw new DaoException("Exception", e);
+        }
     }
 
     @Override
-    public Integer update(Application entity) throws DaoException {
-        return null;
+    public Integer update(Application application) throws DaoException {
+        try(Connection connect = POOL.getConnection();
+            PreparedStatement statement = connect.prepareStatement(UPDATE_APPLICATION)) {
+
+            statement.setInt(1, application.getRoomSize());
+            statement.setString(2, application.getRoomClass());
+            statement.setDate(3, (java.sql.Date) application.getDateFrom());
+            statement.setDate(4, (java.sql.Date) application.getDateTo());
+            statement.setInt(5, application.getApplicationId());
+            statement.executeUpdate();
+
+            return application.getApplicationId();
+        } catch (SQLException | ConnectionPoolException e) {
+            throw new DaoException("Exception", e);
+        }
     }
 }
